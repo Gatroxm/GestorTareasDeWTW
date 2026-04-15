@@ -55,7 +55,6 @@ public class TaskService : ITaskService
         var task = await _context.Tasks.FindAsync(id);
         if (task == null) return false;
 
-        // VALIDACIÓN SENIOR: Impedir salto de Pending a Done
         if (task.Status == "Pending" && newStatus == "Done")
         {
             throw new InvalidOperationException("No se permite cambiar el estado directamente de Pending a Done. Debe pasar por InProgress.");
