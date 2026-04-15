@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navbar mat-elevation-z6">
+  <mat-icon>assignment</mat-icon>
+  <span style="margin-left: 10px;">Gestor de Tareas WTW</span>
+
+  <span class="spacer"></span>
+
+  <div class="nav-buttons">
+    <button mat-button routerLink="/tasks" routerLinkActive="active-link">
+      <mat-icon>list</mat-icon> Tareas
+    </button>
+    <button mat-button routerLink="/new-task" routerLinkActive="active-link">
+      <mat-icon>add_circle</mat-icon> Nueva Tarea
+    </button>
+    <button mat-button routerLink="/users" routerLinkActive="active-link">
+      <mat-icon>people</mat-icon> Colaboradores
+    </button>
+  </div>
+</mat-toolbar>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

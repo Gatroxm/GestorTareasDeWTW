@@ -1,0 +1,61 @@
+<div class="form-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Nueva Tarea</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Título de la tarea</mat-label>
+                    <input matInput formControlName="title" placeholder="Ej: Corregir bug de login">
+                    <mat-error *ngIf="taskForm.get('title')?.hasError('required')">
+                        El título es obligatorio.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Descripción (Opcional)</mat-label>
+                    <textarea matInput formControlName="description" rows="3"></textarea>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Asignar a colaborador</mat-label>
+                    <mat-select formControlName="userId">
+                        <mat-option *ngFor="let user of users" [value]="user.id">
+                            {{user.name}} ({{user.email}})
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="taskForm.get('userId')?.hasError('required')">
+                        Debes asignar la tarea a alguien.
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Prioridad</mat-label>
+                        <mat-select formControlName="priority">
+                            <mat-option value="Baja">Baja</mat-option>
+                            <mat-option value="Media">Media</mat-option>
+                            <mat-option value="Alta">Alta</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Etiquetas (separadas por coma)</mat-label>
+                        <input matInput formControlName="tags" placeholder="UI, Bug, Urgente">
+                    </mat-form-field>
+                </div>
+
+                <div class="actions">
+                    <button mat-button type="button" routerLink="/tasks">Cancelar</button>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+                        Guardar Tarea
+                    </button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.sln.dotSettings.user
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+
+# Otros
+.DS_Store
+.vscode/
