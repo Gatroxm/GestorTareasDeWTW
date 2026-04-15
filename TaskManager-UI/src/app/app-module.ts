@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common'; // <--- IMPORTANTE para *ngIf
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,14 +10,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field'; // Para mat-form-field y mat-error
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app'; 
 
-// Asegúrate de que los nombres coincidan con los de tus archivos .ts
 import { TaskListComponent } from './components/task-list/task-list';
 import { TaskFormComponent } from './components/task-form/task-form';
 import { UserFormComponent } from './components/user-form/user-form';
@@ -27,11 +26,11 @@ import { UserFormComponent } from './components/user-form/user-form';
     AppComponent,
     TaskListComponent,
     TaskFormComponent,
-    UserFormComponent  // <--- Verifica que se llame UserFormComponent dentro de tu .ts
+    UserFormComponent 
   ],
   imports: [
     BrowserModule,
-    CommonModule,      // <--- AGREGAR ESTO para solucionar el error de *ngIf
+    CommonModule,  
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -41,7 +40,7 @@ import { UserFormComponent } from './components/user-form/user-form';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
-    MatFormFieldModule, // <--- Esto habilita mat-label, mat-error, etc.
+    MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
     MatCardModule

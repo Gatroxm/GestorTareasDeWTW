@@ -8,12 +8,12 @@ const routes: Routes = [
   { path: 'tasks', component: TaskListComponent },
   { path: 'new-task', component: TaskFormComponent },
   { path: 'users', component: UserFormComponent },
-  { path: '', redirectTo: '/tasks', pathMatch: 'full' }, // Redirige al inicio
-  { path: '**', redirectTo: '/tasks' } // Ruta comodín por si escriben algo mal
+  { path: '', redirectTo: '/tasks', pathMatch: 'full' },
+  { path: '**', redirectTo: '/tasks' } 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule] // ¡ESTO ES VITAL!
+  exports: [RouterModule] 
 })
 export class AppRoutingModule { }
