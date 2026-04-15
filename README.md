@@ -43,7 +43,7 @@ dotnet ef database update
 
 ### 3. Ejecución del Backend
 ```bash
-cd Backend
+cd TaskManager.API
 dotnet restore
 dotnet run
 ```
@@ -51,7 +51,7 @@ dotnet run
 
 ### 4. Ejecución del Frontend
 ```bash
-cd Frontend
+cd TaskManager-UI
 npm install
 ng serve
 ```
